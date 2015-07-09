@@ -29,3 +29,7 @@ Dancer.prototype.setPosition = function(top, left){
   };
   this.$node.css(styleSettings);
 };
+
+Dancer.prototype.setColor = function(color) {
+  this.$node.css('border-color', color);
+}

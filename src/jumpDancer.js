@@ -1,6 +1,5 @@
 var JumpDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-
 };
 
 JumpDancer.prototype = Object.create(Dancer.prototype);
