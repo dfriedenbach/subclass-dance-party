@@ -54,5 +54,14 @@ describe("swingDancer", function() {
       expect(nearest).to.equal(null);
     });
 
+    it("should pair with dancer within threshold distance", function(){
+      var dancer1 = new SwingDancer(50, 50, timeBetweenSteps);
+      // swingDancer.step(timeBetweenSteps);
+      // expect(swingDancer.partner).to.equal(dancer1);
+      expect(dancer1.partner).to.equal(swingDancer);
+    });
+
+
+
   });
 });

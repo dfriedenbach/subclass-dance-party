@@ -1,6 +1,8 @@
 var SwingDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, timeBetweenSteps + 600);
+  // paired and partner need to be initialized prior to the first step call, which happens in Dancer.call
   this.paired = false;
+  this.partner = null;
+  Dancer.call(this, top, left, timeBetweenSteps + 600);
 };
 
 SwingDancer.prototype = Object.create(Dancer.prototype);
@@ -10,12 +12,28 @@ SwingDancer.prototype.step = function(timeBetweenSteps){
   Dancer.prototype.step.call(this, timeBetweenSteps);
 
   if (!window.linedUp) {
+    if (this.paired) {
+      // Twirl!
+    } else {
+      var nearest = this.findPartner();
+      if (nearest) {
+        if (nearest.distance < 75) {
+          // pair up
+          this.askToDance(nearest.dancer);
+        } else {
+          // move closer
+        }
+      } else {
+        // default unpaired behavior
+      }
+    }
     // var newTop = Math.max($("body").height() * Math.random(), 32);
     // var newLeft = $("body").width() * Math.random();
     // this.move(newTop, newLeft);
   }
 };
 
+// Finds nearest unpaired swing dancer
 SwingDancer.prototype.findPartner = function() {
   var dancers = window.dancers;
   var nearest = null;
@@ -30,4 +48,14 @@ SwingDancer.prototype.findPartner = function() {
     }
   }
   return nearest;
-}
+};
+
+SwingDancer.prototype.askToDance = function(partner) {
+  if (! (this.paired || partner.paired)) {
+    this.paired = true;
+    this.partner = partner;
+    partner.paired = true;
+    partner.partner = this;
+  }
+};
+
