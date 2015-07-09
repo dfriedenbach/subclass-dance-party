@@ -13,7 +13,10 @@ SwingDancer.prototype.step = function(timeBetweenSteps){
 
   if (!window.linedUp) {
     if (this.paired) {
-      // Twirl!
+      if (this.role === 'lead') {
+        // Twirl!
+        
+      }
     } else {
       var nearest = this.findPartner();
       if (nearest) {
@@ -22,6 +25,9 @@ SwingDancer.prototype.step = function(timeBetweenSteps){
           this.askToDance(nearest.dancer);
         } else {
           // move closer
+          var newTop = this.top + 0.25 * (nearest.dancer.top - this.top);
+          var newLeft = this.left + 0.25 * (nearest.dancer.left - this.left);
+          this.move(newTop, newLeft);
         }
       } else {
         // default unpaired behavior
@@ -54,8 +60,10 @@ SwingDancer.prototype.askToDance = function(partner) {
   if (! (this.paired || partner.paired)) {
     this.paired = true;
     this.partner = partner;
+    this.role = 'lead';
     partner.paired = true;
     partner.partner = this;
+    partner.role = 'follow';
   }
 };
 
