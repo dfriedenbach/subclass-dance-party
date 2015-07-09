@@ -1,3 +1,5 @@
+var dancers = [];
+
 // Creates and returns a new dancer object that can step
 var Dancer = function(top, left, timeBetweenSteps){
   this.originalTop = top;
@@ -9,6 +11,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.step(timeBetweenSteps);
   this.setColor(this.colors[Math.floor(Math.random() * this.colors.length)]);
   // this one sets the position to some random default point within the body
+  dancers.push(this);
 };
 
 Dancer.prototype.step = function(timeBetweenSteps){
@@ -24,6 +27,8 @@ Dancer.prototype.setPosition = function(top, left){
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
   //
+  
+  this.$node.stop(true);
   this.top = top;
   this.left = left;
   var styleSettings = {
@@ -43,4 +48,15 @@ Dancer.prototype.lineUp = function(top, left) {
   // this.prevTop = this.top;
   // this.prevLeft = this.left;
   this.setPosition(top, left);
+};
+
+Dancer.prototype.move = function(top, left) {
+  this.$node.animate({
+    'top': top,
+    'left': left
+  }, 600);
+  this.top = top;
+  this.left = left;
+  this.originalTop = top;
+  this.originalLeft = left;
 };
