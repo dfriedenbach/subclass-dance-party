@@ -29,5 +29,30 @@ describe("swingDancer", function() {
       var nearest = swingDancer.findPartner();
       expect(nearest.dancer).to.equal(dancer2);
     });
+
+    it("should ignore paired dancers", function(){
+      var dancer1 = new SwingDancer(100, 200, timeBetweenSteps);
+      var dancer2 = new SwingDancer(50, 100, timeBetweenSteps);
+      dancer2.paired = true;
+      var dancer3 = new SwingDancer(500, 600, timeBetweenSteps);
+
+      var nearest = swingDancer.findPartner();
+      expect(nearest.dancer).to.equal(dancer1);
+    });
+
+    it("should return null if no unpaired dancer is available", function(){
+      var dancer1 = new SwingDancer(100, 200, timeBetweenSteps);
+      dancer1.paired = true;
+      var dancer2 = new SwingDancer(50, 100, timeBetweenSteps);
+      dancer2.paired = true;
+      var nearest = swingDancer.findPartner();
+      expect(nearest).to.equal(null);
+    });
+
+    it("should return null if there are no other swingDancers", function(){
+      var nearest = swingDancer.findPartner();
+      expect(nearest).to.equal(null);
+    });
+
   });
 });
