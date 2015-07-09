@@ -10,12 +10,17 @@ SwingDancer.prototype.constructor = SwingDancer;
 SwingDancer.prototype.step = function(timeBetweenSteps){
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this, timeBetweenSteps);
-
+  var newTop;
+  var newLeft;
   if (!window.linedUp) {
     if (this.paired) {
       if (this.role === 'lead') {
-        // Twirl!
-        
+        newTop = this.top + Math.random() * 100 - 50;
+        newLeft = this.left + Math.random() * 100 - 50; 
+        this.move(newTop, newLeft);
+        newTop += this.coinToss() ? 40 : -40;
+        newLeft += this.coinToss() ? 40 : -40;
+        this.partner.move(newTop, newLeft);
       }
     } else {
       var nearest = this.findPartner();
@@ -25,8 +30,8 @@ SwingDancer.prototype.step = function(timeBetweenSteps){
           this.askToDance(nearest.dancer);
         } else {
           // move closer
-          var newTop = this.top + 0.25 * (nearest.dancer.top - this.top);
-          var newLeft = this.left + 0.25 * (nearest.dancer.left - this.left);
+          newTop = this.top + 0.25 * (nearest.dancer.top - this.top);
+          newLeft = this.left + 0.25 * (nearest.dancer.left - this.left);
           this.move(newTop, newLeft);
         }
       } else {
@@ -37,6 +42,10 @@ SwingDancer.prototype.step = function(timeBetweenSteps){
     // var newLeft = $("body").width() * Math.random();
     // this.move(newTop, newLeft);
   }
+};
+
+SwingDancer.prototype.coinToss = function () {
+  return Math.floor(Math.random() * 2);
 };
 
 // Finds nearest unpaired swing dancer
