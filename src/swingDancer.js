@@ -3,6 +3,7 @@ var SwingDancer = function(top, left, timeBetweenSteps) {
   this.paired = false;
   this.partner = null;
   Dancer.call(this, top, left, timeBetweenSteps + 400);
+  this.$node.addClass('swing');
 };
 
 SwingDancer.prototype = Object.create(Dancer.prototype);

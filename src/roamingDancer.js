@@ -1,5 +1,6 @@
 var RoamingDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, timeBetweenSteps + 600);
+  Dancer.call(this, top, left, timeBetweenSteps + 1000);
+  this.$node.addClass('roaming');
 };
 
 RoamingDancer.prototype = Object.create(Dancer.prototype);
@@ -13,4 +14,15 @@ RoamingDancer.prototype.step = function(timeBetweenSteps){
     var newLeft = $("body").width() * Math.random();
     this.move(newTop, newLeft);
   }
+};
+
+RoamingDancer.prototype.move = function(top, left) {
+  this.$node.animate({
+    'top': top,
+    'left': left
+  }, 1000);
+  this.top = top;
+  this.left = left;
+  this.originalTop = top;
+  this.originalLeft = left;
 };

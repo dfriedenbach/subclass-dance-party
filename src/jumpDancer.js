@@ -1,5 +1,6 @@
 var JumpDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, Math.max(400, timeBetweenSteps));
+  this.$node.addClass('jump');
 };
 
 JumpDancer.prototype = Object.create(Dancer.prototype);

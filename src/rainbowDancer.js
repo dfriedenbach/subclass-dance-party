@@ -1,5 +1,6 @@
 var RainbowDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('rainbow');
 };
 
 RainbowDancer.prototype = Object.create(Dancer.prototype);
@@ -12,5 +13,3 @@ RainbowDancer.prototype.step = function(timeBetweenSteps){
   // other effects you can use on a jQuery-wrapped html tag.
   this.setColor(this.colors[Math.floor(Math.random() * this.colors.length)]);
 };
-
-RainbowDancer.prototype.colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'violet'];
