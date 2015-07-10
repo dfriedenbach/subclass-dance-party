@@ -3,8 +3,8 @@ var ShyDancer = function(top, left, timeBetweenSteps) {
   var thisDancer = this;
   this.$node.addClass('shy');
   this.$node.on('mouseover', function(event) {
-    var newTop = thisDancer.top + Math.random() * 100 - 50;
-    var newLeft = thisDancer.left + Math.random() * 100 - 50; 
+    var newTop = thisDancer.top + Math.random() * 300 - 150;
+    var newLeft = thisDancer.left + Math.random() * 300 - 150; 
     thisDancer.move(newTop, newLeft);
   });
 };
