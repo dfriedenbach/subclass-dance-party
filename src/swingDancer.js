@@ -2,7 +2,7 @@ var SwingDancer = function(top, left, timeBetweenSteps) {
   // paired and partner need to be initialized prior to the first step call, which happens in Dancer.call
   this.paired = false;
   this.partner = null;
-  Dancer.call(this, top, left, timeBetweenSteps + 600);
+  Dancer.call(this, top, left, timeBetweenSteps + 400);
 };
 
 SwingDancer.prototype = Object.create(Dancer.prototype);
@@ -74,5 +74,16 @@ SwingDancer.prototype.askToDance = function(partner) {
     partner.partner = this;
     partner.role = 'follow';
   }
+};
+
+SwingDancer.prototype.move = function(top, left) {
+  this.$node.animate({
+    'top': top,
+    'left': left
+  }, 400);
+  this.top = top;
+  this.left = left;
+  this.originalTop = top;
+  this.originalLeft = left;
 };
 
