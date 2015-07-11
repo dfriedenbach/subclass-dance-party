@@ -95,28 +95,12 @@ body, a:link, a:visited, a:active{
   border-radius: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.break {
+  border: none;
+  background-image: url("http://i.imgur.com/iJaBPtO.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  border-radius: 0;
+}
