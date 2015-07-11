@@ -54,10 +54,10 @@ body, a:link, a:visited, a:active{
 
 .swing {
   border: none;
-  background-image: url("http://i.imgur.com/qdV5FmW.gif");
+  background-image: url("http://i.imgur.com/UZVaow9.gif");
   background-repeat: no-repeat;
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   border-radius: 0;
 }
 
@@ -85,35 +85,13 @@ body, a:link, a:visited, a:active{
 
 .jump {
   border: none;
-  background-image: url("http://i.imgur.com/FfJoeNh.gif");
+  background-image: url("http://i.imgur.com/y9Rx2AD.gif");
   background-repeat: no-repeat;
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   border-radius: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Applejack*/
+/*http://i.imgur.com/FfJoeNh.gif*/
 
 
