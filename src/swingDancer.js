@@ -8,6 +8,7 @@ var SwingDancer = function(top, left, timeBetweenSteps) {
 
 SwingDancer.prototype = Object.create(Dancer.prototype);
 SwingDancer.prototype.constructor = SwingDancer;
+
 SwingDancer.prototype.step = function(timeBetweenSteps){
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this, timeBetweenSteps);
@@ -39,9 +40,6 @@ SwingDancer.prototype.step = function(timeBetweenSteps){
         // default unpaired behavior
       }
     }
-    // var newTop = Math.max($("body").height() * Math.random(), 32);
-    // var newLeft = $("body").width() * Math.random();
-    // this.move(newTop, newLeft);
   }
 };
 

@@ -11,6 +11,7 @@ var ShyDancer = function(top, left, timeBetweenSteps) {
 
 ShyDancer.prototype = Object.create(Dancer.prototype);
 ShyDancer.prototype.constructor = ShyDancer;
+
 ShyDancer.prototype.step = function(timeBetweenSteps){
   // Do nothing - too shy to dance!
 };

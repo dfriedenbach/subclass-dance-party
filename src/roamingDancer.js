@@ -5,6 +5,7 @@ var RoamingDancer = function(top, left, timeBetweenSteps) {
 
 RoamingDancer.prototype = Object.create(Dancer.prototype);
 RoamingDancer.prototype.constructor = RoamingDancer;
+
 RoamingDancer.prototype.step = function(timeBetweenSteps){
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this, timeBetweenSteps);
