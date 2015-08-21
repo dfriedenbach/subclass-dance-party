@@ -103,9 +103,9 @@ body, a:link, a:visited, a:active{
 }
 
 .front-flip {
-  -webkit-animation: 'front-flip' 1s 1;
-     -moz-animation: 'front-flip' 1s 1;
-          animation: 'front-flip' 1s 1;
+  -webkit-animation: front-flip 1s 1;
+     -moz-animation: front-flip 1s 1;
+          animation: front-flip 1s 1;
 }
 
 @-webkit-keyframes front-flip {
@@ -143,9 +143,9 @@ body, a:link, a:visited, a:active{
 }
 
 .spin-flip {
-  -webkit-animation: 'spin-flip' 1s 1;
-     -moz-animation: 'spin-flip' 1s 1;
-          animation: 'spin-flip' 1s 1;
+  -webkit-animation: spin-flip 1s 1;
+     -moz-animation: spin-flip 1s 1;
+          animation: spin-flip 1s 1;
 }
 
 @-webkit-keyframes spin-flip {
@@ -183,9 +183,9 @@ body, a:link, a:visited, a:active{
 }
 
 .rev-spin-flip {
-  -webkit-animation: 'rev-spin-flip' 1s 1;
-     -moz-animation: 'rev-spin-flip' 1s 1;
-          animation: 'rev-spin-flip' 1s 1;
+  -webkit-animation: rev-spin-flip 1s 1;
+     -moz-animation: rev-spin-flip 1s 1;
+          animation: rev-spin-flip 1s 1;
 }
 
 @-webkit-keyframes rev-spin-flip {
@@ -223,9 +223,9 @@ body, a:link, a:visited, a:active{
 }
 
 .floor-spin {
-  -webkit-animation: 'floor-spin' 1s 1;
-     -moz-animation: 'floor-spin' 1s 1;
-          animation: 'floor-spin' 1s 1;
+  -webkit-animation: floor-spin 1s 1;
+     -moz-animation: floor-spin 1s 1;
+          animation: floor-spin 1s 1;
 }
 
 @-webkit-keyframes floor-spin {
@@ -272,9 +272,9 @@ body, a:link, a:visited, a:active{
 }
 
 .rev-floor-spin {
-  -webkit-animation: 'rev-floor-spin' 1s 1;
-     -moz-animation: 'rev-floor-spin' 1s 1;
-          animation: 'rev-floor-spin' 1s 1;
+  -webkit-animation: rev-floor-spin 1s 1;
+     -moz-animation: rev-floor-spin 1s 1;
+          animation: rev-floor-spin 1s 1;
 }
 
 @-webkit-keyframes rev-floor-spin {
@@ -321,9 +321,9 @@ body, a:link, a:visited, a:active{
 }
 
 .head-spin {
-  -webkit-animation: 'head-spin' 1s 1;
-     -moz-animation: 'head-spin' 1s 1;
-          animation: 'head-spin' 1s 1;
+  -webkit-animation: head-spin 1s 1;
+     -moz-animation: head-spin 1s 1;
+          animation: head-spin 1s 1;
 }
 
 @-webkit-keyframes head-spin {
